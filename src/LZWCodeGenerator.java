@@ -9,7 +9,7 @@ import java.io.PrintWriter;
 public class LZWCodeGenerator {
 
 	public static void main(String [] args) throws IOException {
-		compressText("fileToCompress.txt");
+		compressText("big.txt");
 	}
 
 	public static void compressText(String inputFile) throws IOException {
