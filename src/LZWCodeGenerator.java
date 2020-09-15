@@ -54,8 +54,8 @@ public class LZWCodeGenerator {
 		
 		for (int i = 0; i < compressedText.size(); i++) { // convert array list to binary and add to string
 			String num = Integer.toBinaryString(compressedText.get(i)); 
-			// pads 0s to make it 8 long
-			while(num.length() < 8) {
+			// pads 0s to make it 12 long
+			while(num.length() < 12) {
 				num = "0" + num;
 			}
 			str.append(num);
@@ -65,7 +65,7 @@ public class LZWCodeGenerator {
 				str.delete(0, 8);
 			}
 		}
-		int left = 8 - (str.length() % 8); // add extra zeroes for padding
+		int left = (8 - (str.length() % 8)) % 8; // add extra zeroes for padding
 		if(left != 8) {
 			for(int j = 0; j < left; j++) {
 				str.append("0");
